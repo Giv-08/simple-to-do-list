@@ -4,25 +4,76 @@
 html {
   background-image: url(https://img.freepik.com/free-vector/cute-kitchen-utensils-doodle-sticker-set_53876-99857.jpg?w=2000);
   margin: 0;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 350px;
+  padding: 0;
 }
+
 * {
   font-family: "Short Stack", cursive;
   box-sizing: border-box;
 }
+
+
+.wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+}
+
+.wrap h3 {
+  /* position: relative;
+  top: 10px; */
+  font-weight: bold;
+  font-size: 3.5rem;
+  background: linear-gradient(270deg, #4266a9, #37ffffc0, #52f6d8, #c4f5ff, #6ae1b9, #e1fff5, #195ccf, #2f7083);
+  background-size: 1600% 1600%;
+  -webkit-animation: GradientAnim 50s ease infinite;
+  animation: GradientAnim 50s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@-webkit-keyframes GradientAnim {
+    0%{background-position: 0% 50%}
+    50%{background-position: 100% 50%}
+    100%{background-position: 0% 50%}
+}
+
+@keyframes GradientAnim {
+    0%{background-position: 0% 50%}
+    50%{background-position: 100% 50%}
+    100%{background-position: 0% 50%}
+}
+
+
+
+
+div.box-wrap {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+div.list-box {
+  display: flex;
+  margin: 0 4rem;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Style the header */
 .header {
-  width: 800px;
-  height: 200px;
+  width: 70vw;
+  height: 25vh;
   background-color: #d3ebeff2;
   padding: 30px 40px;
   color: #5f5f5f;
   text-align: center;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
 }
 
 /* Clear floats after the header */
@@ -41,15 +92,24 @@ h2 {
 }
 
 /* Style the input */
+.input-btn {
+  display: flex;
+  position: relative;
+}
+
 input {
   margin: 0;
   border: none;
-  border-radius: 0;
-  width: 570px;
+  width: 100%;
   padding: 10px;
   font-size: 16px;
+  border-bottom-left-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
 }
 
+.list {
+  width: 70vw;
+}
 /* Style Add button */
 .addBtn {
   padding: 10px;
@@ -61,7 +121,8 @@ input {
   font-size: 16px;
   cursor: pointer;
   transition: 0.3s;
-  border-radius: 0;
+  border-bottom-right-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }
 
 .addBtn:hover {
@@ -78,7 +139,7 @@ li {
 }
 /* Style the list items */
 ul li {
-  width: 800px;
+  width: 100%;
   display: block;
   cursor: pointer;
   position: relative;
@@ -97,11 +158,6 @@ ul li {
 /* Set all odd list items to a different color (zebra-stripes) */
 ul li:nth-child(odd) {
   background: #cef5ff;
-}
-
-/* Darker background-color on hover */
-ul li:hover {
-  background: #faf3e6;
 }
 
 /* When clicked on, add a background color and strike out text */
@@ -152,12 +208,103 @@ ul li.checked::before {
   display: table;
   clear: both;
 }
+
 /*style footer*/
 #footer {
   font-size: 1.3rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  margin-left: 190px;
+  display: flex;
+  justify-content: center;
+  /* margin-top: 2rem; */
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  h1 {
+  font-size: 4vw;
+  }
+
+  h2#display-present-date {
+  font-size: 4vw;
+  }
+
+  ul li {
+    font-size: 2.3vw;
+  }
+
+  input {
+    font-size: 15px;
+  }
+
+  .addBtn {
+    font-size: 15px;
+  }
+
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 5vw;
+  }
+
+  ul li {
+    font-size: 2.5vw;
+  }
+
+  #footer {
+    text-align: center;
+  }
+
+  input {
+    border-bottom-right-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    height: 5vh;
+  }
+
+  .input-btn {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .addBtn {
+    padding: 10px;
+    width: 100%;
+    border-bottom-left-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    height: 5vh;
+  }
+
+  .wrap h3 {
+    font-size: 3rem;
+  }
+
+}
+
+@media (max-width: 380px) {
+  ul li {
+    font-size: 2.5vw;
+  }
+
+
+  input {
+    height: 4vh;
+    font-size: 8px;
+  }
+
+  .addBtn {
+    height: 4vh;
+    padding: 6px;
+    font-size: 11px;
+  }
+
+  #footer {
+    font-size: 1rem;
+  }
+
+  .wrap h3 {
+    text-align: center;
+    font-size: 10vw;
+  }
 }

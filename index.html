@@ -7,20 +7,33 @@
   </head>
   <link rel="stylesheet" href="style.css" />
   <body>
-    <div id="myDIV" class="header">
-      <h1>MIS EN PLACE LIST</h1>
-      <h2 id="display-present-date"></h2>
-      <input type="text" id="myInput" placeholder="Add new task here..." />
-      <span onclick="newElement()" class="addBtn">Add</span>
+    <div class="box-wrap">
+      <div class="wrap">
+        <h3>Hello Chefs!</h3>
+      </div>
+      <div class="list-box">
+        <div id="myDIV" class="header">
+          <h1>MIS EN PLACE LIST</h1>
+          <h2 id="display-present-date"></h2>
+          <div class="input-btn">
+            <input type="text" id="myInput" placeholder="Add new task here..." />
+            <span onclick="newElement()" class="addBtn">Add</span>
+        </div>
+        </div>
+        <div class="list">
+          <ul id="myUL">
+            <li>Peel 10 kg of potatoes</li>
+            <li>Peel and slice 5 kg of onions</li>
+            <li class="checked">Make 2 litres of Bearnaise sauce</li>
+            <li>Make 3 litres of orange vinaigrette</li>
+            <li>Wash 5 kg of Romaine lettuce</li>
+            <li>Roast 10 kg of pumpkins</li>
+          </ul>
+      </div>
+      </div>
     </div>
-    <ul id="myUL">
-      <li>Peel 10 kg of potatoes</li>
-      <li>Peel and slice 5 kg of onions</li>
-      <li class="checked">Make 2 litres of Bearnaise sauce</li>
-      <li>Make 3 litres of orange vinaigrette</li>
-      <li>Wash 5 kg of Romaine lettuce</li>
-      <li>Roast 10 kg of pumpkins</li>
-    </ul>
+
+    <!---------------------- SCRIPT ----------------------->
     <script src="./script.js"></script>
   </body>
   <footer id="footer">Created by Chef Giv-08</footer>
